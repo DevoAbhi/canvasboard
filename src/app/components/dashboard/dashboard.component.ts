@@ -112,7 +112,8 @@ export class DashboardComponent implements OnInit {
       <h5 class="folder-title" id=folder-name-${obj._id}>
         <strong id=name-display-${obj._id}>${obj.folder_name}</strong>
       </h5>
-      <button style="border-style:none; color:rgb(99, 64, 88); outline: none; margin-left:1rem;margin-top:2.5rem;background-color:transparent"
+      <button style="border-style:none; color:rgb(99, 64, 88); outline: none;
+      margin-left:1rem;margin-top:2.5rem;background-color:transparent"
         id=button-edit-name-${obj._id}>
         <svg  width="0.8em" height="0.8em" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 388.947 388.947">
@@ -139,12 +140,12 @@ export class DashboardComponent implements OnInit {
         if (editText.style.display === 'block') {
           editText.style.display = 'none';
           folderName.style.display = 'block';
-          editButton.style.display= 'block';
+          editButton.style.display = 'block';
 
         } else {
           editText.style.display = 'block';
           folderName.style.display = 'none';
-          editButton.style.display= 'none';
+          editButton.style.display = 'none';
         }
       });
       // Click action to close the edit input
@@ -155,7 +156,7 @@ export class DashboardComponent implements OnInit {
         if (editText.style.display === 'block') {
           editText.style.display = 'none';
           folderName.style.display = 'block';
-          editButton.style.display= 'block';
+          editButton.style.display = 'block';
         }
         if (document.getElementById(`new-name-text-${obj._id}`).style.borderColor === 'red') {
           document.getElementById(`new-name-text-${obj._id}`).style.borderColor = 'transparent';
@@ -175,7 +176,7 @@ export class DashboardComponent implements OnInit {
           if (editText.style.display === 'block') {
             editText.style.display = 'none';
             folderName.style.display = 'block';
-            editButton.style.display= 'block';
+            editButton.style.display = 'block';
           }
         }
       });
@@ -285,7 +286,8 @@ export class DashboardComponent implements OnInit {
       <h5 class="folder-title" id=folder-name-${obj._id}>
         <strong id=name-display-${obj._id}>${obj.folder_name}</strong>
       </h5>
-        <button style="border-style:none; color:rgb(99, 64, 88); outline: none; margin-left:1rem;margin-top:2.5rem;background-color:transparent"
+        <button style="border-style:none; color:rgb(99, 64, 88); outline: none;
+        margin-left:1rem;margin-top:2.5rem;background-color:transparent"
         id=button-edit-name-${obj._id}>
         <svg  width="0.8em" height="0.8em" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 388.947 388.947">
