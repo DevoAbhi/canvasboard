@@ -31,9 +31,8 @@ export class DashboardComponent implements OnInit {
     this.data = data.folders;
     this.Username = data.user_name;
     if (Object.keys(this.data).length === 0) {
-      // $('#user-folders').html('<div>Hello</div>');
-      const notFound = 'Please add a Workspace!';
-      $('#user-folders').append(`<h5 id='not-found'>${notFound}</h5>`);
+      const noWorkspace = 'Please add a Workspace!';
+      $('#user-folders').append(`<h5 id='not-found'>${noWorkspace}</h5>`);
     } else {
       this.addFolders(data);
     }
@@ -42,8 +41,8 @@ export class DashboardComponent implements OnInit {
   filterFolders() {
     if (this.filterFolderName === '' && Object.keys(this.data).length === 0) {
       $('#user-folders').html('');
-      const notFound = 'Please add a Workspace!';
-      $('#user-folders').append(`<h5 id='not-found'>${notFound}</h5>`);
+      const noWorkspace = 'Please add a Workspace!';
+      $('#user-folders').append(`<h5 id='not-found'>${noWorkspace}</h5>`);
     } else {
       $('#user-folders').html('');
       let folderNames: Array<string> = [];
@@ -227,14 +226,12 @@ export class DashboardComponent implements OnInit {
       const index = this.data.findIndex((o) => {
         return o._id === id;
       });
-      console.log(index);
       if (index !== -1) {
         this.data.splice(index, 1);
       }
-      console.log(this.data);
       if (Object.keys(this.data).length === 0) {
-        const notFound = 'Please add a Workspace!';
-        $('#user-folders').append(`<h5 id='not-found'>${notFound}</h5>`);
+        const noWorkspace = 'Please add a Workspace!';
+        $('#user-folders').append(`<h5 id='not-found'>${noWorkspace}</h5>`);
       }
 
       // Removing from HTML
@@ -248,8 +245,8 @@ export class DashboardComponent implements OnInit {
       this.filterFolderName = '';
       this.filterFolders();
     }
-    if (Object.keys(obj.folders).length === 0) {
-      $('#not-found').html('');
+    if (Object.keys(this.data).length === 0) {
+      $('#user-folders').html('');
     }
     $('#user-folders').append(`
     <div class="folder-box shadow" id=${obj._id}>
