@@ -31,7 +31,9 @@ export class DashboardComponent implements OnInit {
     this.data = data.folders;
     this.Username = data.user_name;
     if (Object.keys(this.data).length === 0) {
-      $('#user-folders').html('');
+      // $('#user-folders').html('<div>Hello</div>');
+      const notFound = 'Please add a Workspace!';
+      $('#user-folders').append(`<h5 id='not-found'>${notFound}</h5>`);
     } else {
       this.addFolders(data);
     }
@@ -40,6 +42,8 @@ export class DashboardComponent implements OnInit {
   filterFolders() {
     if (this.filterFolderName === '' && Object.keys(this.data).length === 0) {
       $('#user-folders').html('');
+      const notFound = 'Please add a Workspace!';
+      $('#user-folders').append(`<h5 id='not-found'>${notFound}</h5>`);
     } else {
       $('#user-folders').html('');
       let folderNames: Array<string> = [];
@@ -228,6 +232,10 @@ export class DashboardComponent implements OnInit {
         this.data.splice(index, 1);
       }
       console.log(this.data);
+      if (Object.keys(this.data).length === 0) {
+        const notFound = 'Please add a Workspace!';
+        $('#user-folders').append(`<h5 id='not-found'>${notFound}</h5>`);
+      }
 
       // Removing from HTML
       document.getElementById(`${id}`).remove();
